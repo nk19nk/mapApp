@@ -1,56 +1,21 @@
-# Welcome to your Expo app 👋
+# mapApp
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Приложение для работы с геолокацией, отображения интерактивной карты, сохранения маркеров с изображениями и получения push-уведомлений при приближении к сохраненным точкам. 
+Проект разработан с использованием React Native (Expo SDK 58), TypeScript и локальной базы данных SQLite.
 
-## Get started
+## Инструкция по установке и запуску
 
-1. Install dependencies
-
-   ```bash
+1. **Склонируйте репозиторий и установите зависимости:**
    npm install
-   ```
 
-2. Start the app
+2. **Запустите сервер разработки Expo:**
+   npx expo start -c
 
-   ```bash
-   npx expo start
-   ```
+3. **Запуск на устройстве:**
+   Эмулятор Android: Нажмите a в терминале.
+   Физическое устройство: Отсканируйте QR-код через приложение Expo Go (на Android) или камеру (на iOS).
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
-
-### Other setup steps
-
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+4. **Инструкция по тестированию геолокации и уведомлений**
+   1. Создание метки: Долгим нажатием на карту создайте маркер рядом с вашим текущим местоположением.
+   2. Симуляция перемещения: На панели эмулятора нажмите на три точки (Extended controls) -> вкладка Location. Задайте координаты на расстоянии более 50 метров от маркера и нажмите Set Location.
+   3. Проверка уведомления: В этом же окне задайте координаты максимально близко к сохраненному маркеру и нажмите Set Location. При «входе» в радиус 50 метров появится уведомление «Вы рядом с меткой!».
